@@ -1,11 +1,14 @@
 from django.shortcuts import render
+from .models import Game
+
 
 # Create your views here.
 def index(request):
     return render(request, 'efratbb/index.html')
 
 def schedule(request):
-    return render(request, 'efratbb/schedule.html')
+    games = Game.objects.all()
+    return render(request, 'efratbb/schedule.html', { 'games': games })
 
 def standings(request):
     return render(request, 'efratbb/standings.html')
