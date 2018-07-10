@@ -11,12 +11,12 @@
     <nav>
       <ul id="nav-list">
         <li id="banner" class="nav-items"><a href="{% url 'index' %}">Efrat Baseball</a></li>
-        <li class="nav-items"><a href="{% url 'schedule' %}">Schedule</a></li>
-        <li class="nav-items"><a href="{% url 'standings' %}">Standings</a></li>
-        <li class="nav-items"><a href="{% url 'register' %}">Register</a></li>
-        <li class="nav-items"><a href="{% url 'comments' %}">Comments</a></li>
-        <li class="nav-items"><a href="{% url 'gallery' %}">Gallery</a></li>
-        <li class="nav-items"><a href="{% url 'contacts' %}">Contacts</a></li>
+        <li class="nav-items"><a class="{% block schedule %}{% endblock %}" href="{% url 'schedule' %}">Schedule</a></li>
+        <li class="nav-items"><a class="{% block standings %}{% endblock %}" href="{% url 'standings' %}">Standings</a></li>
+        <li class="nav-items"><a class="{% block register %}{% endblock %}" href="{% url 'register' %}">Register</a></li>
+        <li class="nav-items"><a class="{% block comments %}{% endblock %}" href="{% url 'comments' %}">Comments</a></li>
+        <li class="nav-items"><a class="{% block gallery %}{% endblock %}" href="{% url 'gallery' %}">Gallery</a></li>
+        <li class="nav-items"><a class="{% block contacts %}{% endblock %}" href="{% url 'contacts' %}">Contacts</a></li>
       </ul>
     </nav>
     <div id="content-wrapper">
