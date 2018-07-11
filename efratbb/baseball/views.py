@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Game
+from .models import D1_Game
 
 
 # Create your views here.
@@ -7,7 +7,7 @@ def index(request):
     return render(request, 'efratbb/index.html')
 
 def schedule(request):
-    games = Game.objects.all()
+    games = D1_Game.objects.all()
     return render(request, 'efratbb/schedule.html', { 'games': games })
 
 def standings(request):
