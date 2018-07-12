@@ -3,14 +3,61 @@
 {% block schedule %}active{% endblock %}
 {% block content %}
 <h1>This is the schedule page</h1>
-<table class="table" id="schedule-table">
+<table class="table " id="d1-schedule">
+  <caption>D1 Schedule</caption>
   <tr>
     <th>Date</th>
     <th>Time</th>
     <th>Away Team</th>
     <th>Home Team</th>
   </tr>
-  {% for game in games %}
+  {% for game in d1_games %}
+  <tr>
+    <td>{{ game.month }}, {{ game.day }}</td>
+    {% if not game.away_team_score == None %}
+    <td>F</td>
+    <td>{{ game.away_team }} {{ game.away_team_score }}</td>
+    <td>@ {{ game.home_team }} {{ game.home_team_score }}</td>
+    {% else %}
+    <td>{{ game.time }}</td>
+    <td>{{ game.away_team }}</td>
+    <td>@ {{ game.home_team }}</td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+<table class="table " id="d2-schedule">
+  <caption>D2 Schedule</caption>
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Away Team</th>
+    <th>Home Team</th>
+  </tr>
+  {% for game in d2_games %}
+  <tr>
+    <td>{{ game.month }}, {{ game.day }}</td>
+    {% if not game.away_team_score == None %}
+    <td>F</td>
+    <td>{{ game.away_team }} {{ game.away_team_score }}</td>
+    <td>@ {{ game.home_team }} {{ game.home_team_score }}</td>
+    {% else %}
+    <td>{{ game.time }}</td>
+    <td>{{ game.away_team }}</td>
+    <td>@ {{ game.home_team }}</td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+<table class="table " id="d3-schedule">
+  <caption>D3 Schedule</caption>
+  <tr>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Away Team</th>
+    <th>Home Team</th>
+  </tr>
+  {% for game in d3_games %}
   <tr>
     <td>{{ game.month }}, {{ game.day }}</td>
     {% if not game.away_team_score == None %}
